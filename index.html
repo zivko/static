@@ -30,6 +30,7 @@
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#services">What we do</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
                     </ul>
                 </div>
             </div>
@@ -102,6 +103,44 @@
                 </div>
             </div>
         </section>
+
+        <section class="page-section" id="feedback">
+        <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Feedback</h2>
+            <h3 class="section-subheading text-muted">We value your feedback. Please let us know your thoughts!</h3>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <form id="feedbackForm">
+                    <div class="form-group">
+                        <label for="customerName">Customer Name</label>
+                        <input type="text" class="form-control" id="customerName" placeholder="Enter your name" required />
+                    </div>
+                    <div class="form-group my-3">
+                        <label for="feedbackContent">Feedback</label>
+                        <textarea class="form-control" id="feedbackContent" rows="5" placeholder="Enter your feedback" maxlength="255" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-xl text-uppercase">Submit Feedback</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </section>
+
+<script>
+document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var customerName = document.getElementById('customerName').value;
+    var feedbackContent = document.getElementById('feedbackContent').value;
+    var mailtoLink = 'mailto:admin@itsnz.co.nz?subject=Customer Feedback&body=Customer Name: ' 
+                      + encodeURIComponent(customerName) + '%0A%0AFeedback:%0A' + encodeURIComponent(feedbackContent);
+    window.location.href = mailtoLink;
+});
+</script>
+        
         <!-- Footer-->
         <footer class="footer py-4">
             <div class="container">
